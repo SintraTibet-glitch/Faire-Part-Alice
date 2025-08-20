@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faire-part de naissance - Alice</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .faire-part-container {
+            perspective: 1500px;
+        }
+
+        .faire-part {
+            width: 400px;
+            height: 600px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .faire-part:hover {
+            transform: rotateY(-180deg);
+        }
+
+        .front, .back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .front {
+            background-image: url('https://i.imgur.com/IucApX1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            justify-content: flex-end;
+            align-items: flex-start;
+            transform: rotateY(0deg);
+        }
+
+        .back {
+            background-color: #fff;
+            color: #333;
+            transform: rotateY(180deg);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .nom-date {
+            margin-bottom: 20px;
+        }
+
+        .nom {
+            font-size: 4em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            padding: 0;
+        }
+
+        .date {
+            font-size: 1em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            padding: 0;
+        }
+
+        .infos {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .info {
+            text-align: center;
+            font-size: 1em;
+        }
+
+        .icone {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .texte {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .photos {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .photo {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 3px solid #eee;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .message {
+            font-style: italic;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="faire-part-container">
+        <div class="faire-part">
+            <div class="front">
+                <div class="nom-date">
+                    <div class="nom">Alice</div>
+                    <div class="date">Tomasovic Savigny</div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="texte">
+                    Un rayon de soleil est entré dans nos vies...
+                </div>
+                <div class="infos">
+                    <div class="info">
+                        <div class="icone">📅</div>
+                        <div>10 août 2025</div>
+                    </div>
+                    <div class="info">
+                        <div class="icone">⏰</div>
+                        <div>00h15</div>
+                    </div>
+                    <div class="info">
+                        <div class="icone">⚖️</div>
+                        <div>3,665 kg</div>
+                    </div>
+                    <div class="info">
+                        <div class="icone">📏</div>
+                        <div>51 cm</div>
+                    </div>
+                </div>
+                <div class="texte">
+                    Chaque instant passé à ses côtés est un bonheur infini.
+                </div>
+                <div class="photos">
+                    <img class="photo" src="https://i.imgur.com/eF13y57.jpg" alt="Alice endormie">
+                    <img class="photo" src="https://i.imgur.com/IzQm3j9.jpg" alt="Pieds d'Alice">
+                </div>
+                <div class="message">
+                    Nous avons hâte de vous la faire rencontrer.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
